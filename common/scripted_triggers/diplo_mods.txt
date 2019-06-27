@@ -1,0 +1,213 @@
+#	Triggers to control if diplomatic actions are enabled:
+#		Format:
+#
+#		<diplomatic action tag>_enabled_trigger = {
+#			<trigger contents>
+#		}
+#
+#		ROOT is the country initiating the diplomatic action.
+#		FROM is the recipient or target of the diplomatic action.
+#
+#		Note:  For cleaner tooltips, it is recommended that you use
+#			if triggers within the enable triggers, and a single
+#			custom_trigger_tooltip trigger within each if trigger.
+#
+#		Example: (Germany is prevented from declaring war on the Soviet Union.)
+#
+#		DIPLOMACY_WAR_ENABLE_TRIGGER = {
+#			if = {
+#				limit = {
+#					tag = GER
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = PREVENT_GER_WAR_ON_SOV
+#					FROM = {
+#						NOT = {
+#							tag = SOV
+#						}
+#					}
+#				}
+#			}
+#		}
+
+
+DIPLOMACY_OFFER_MILACC_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = allow_access
+				option = FREE
+			}
+		}
+		#always = yes
+			NOT = {
+				AND = {
+					FROM = { tag = USA }
+					date < 1941.1.1
+				}
+				AND = {
+					FROM = { tag = USA }
+					ENG = { surrender_progress < 0.7 }
+				}				
+			}
+		
+					
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = allow_access
+				option = SAME_IDEOLOGY
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_SAME_IDEOLOGY_TT
+			has_government = FROM
+		}
+			NOT = {
+				AND = {
+					FROM = { tag = USA }
+					date < 1941.1.1
+				}
+				AND = {
+					FROM = { tag = USA }
+					ENG = { surrender_progress < 0.7 }
+				}				
+			}	
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = allow_access
+				option = BLOCKED
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_BLOCKED_TT
+			always = no
+		}
+	}
+}
+DIPLOMACY_DOCKING_RIGHTS_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = allow_access
+				option = FREE
+			}
+		}
+		#always = yes
+		OR = {
+			NOT = {
+				OR = {
+					tag = USA
+					tag = PHI
+				}
+			}
+			AND = {
+				tag = USA			
+				USA = { has_war = yes }					
+			}
+			AND = {
+				tag = PHI			
+				PHI = { has_war = yes }					
+			}			
+		}		
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = allow_access
+				option = SAME_IDEOLOGY
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_SAME_IDEOLOGY_TT
+			has_government = FROM
+		}
+		OR = {
+			NOT = {
+				OR = {
+					tag = USA
+					tag = PHI
+				}
+			}
+			AND = {
+				tag = USA			
+				USA = { has_war = yes }					
+			}
+			AND = {
+				tag = PHI			
+				PHI = { has_war = yes }					
+			}			
+		}		
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = allow_access
+				option = BLOCKED
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_BLOCKED_TT
+			always = no
+		}
+	}
+}
+DIPLOMACY_OFFER_DOCKING_RIGHTS_ENABLE_TRIGGER = {
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = allow_access
+				option = FREE
+			}
+		}
+		#always = yes
+			NOT = {
+				AND = {
+					FROM = { tag = USA }
+					date < 1941.1.1
+				}
+				AND = {
+					FROM = { tag = USA }
+					ENG = { surrender_progress < 0.7 }
+				}				
+			}	
+	
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = allow_access
+				option = SAME_IDEOLOGY
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_SAME_IDEOLOGY_TT
+			has_government = FROM
+		}
+			NOT = {
+				AND = {
+					FROM = { tag = USA }
+					date < 1941.1.1
+				}
+				AND = {
+					FROM = { tag = USA }
+					ENG = { surrender_progress < 0.7 }
+				}				
+			}		
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = allow_access
+				option = BLOCKED
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = RULE_ALLOW_MILITARY_ACCESS_BLOCKED_TT
+			always = no
+		}
+	}
+}
