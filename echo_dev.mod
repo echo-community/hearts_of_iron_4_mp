@@ -1,8 +1,8 @@
-﻿name="Echo Community Dev"
+name="Echo Community Dev"
 path="mod/echo_dev/"
 tags={
 	"Balance"
-	"Events"
 	"Gameplay"
+	"Fixes"
 }
-supported_version="1.7.*"
+supported_version="1.7.1"
