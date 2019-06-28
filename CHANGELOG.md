@@ -1,9 +1,6 @@
 # 0.0.1  Echo Community Mod
 
-## Gameplay
 
-- The US can no longer join the allies until 1941
-- The US can join the allies before 41 if the British have lost 30% of their victory points.
 
 ## Air Warfare
 - All Strategic bombers defenses halved so light fighters can kill them
