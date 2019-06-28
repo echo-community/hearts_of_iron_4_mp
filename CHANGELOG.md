@@ -1,6 +1,8 @@
 # 0.0.1  Echo Community Mod
 
+## General
 
+- Echo themed loading screens
 
 ## Air Warfare
 - All Strategic bombers defenses halved so light fighters can kill them
