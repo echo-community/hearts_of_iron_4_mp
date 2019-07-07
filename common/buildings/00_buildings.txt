@@ -47,7 +47,7 @@ buildings = {
 		air_base = yes
 		max_level = 10
 		value = 2
-		damage_factor = 0.4
+		damage_factor = 0.5
 	}
 
 	naval_base = {
