@@ -1,6 +1,6 @@
 # 0.3 
 
-- Only historical focuses can be taken for all major and commonwealth nations. 
+- Only historical focuses can be taken for all majors and commonwealth minor nations. 
 
 
 # 0.2
