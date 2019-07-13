@@ -1,7 +1,8 @@
 # 0.3 
 
 - Only historical focuses can be taken for all majors and commonwealth minor nations. 
-
+- Siam can be puppeted by Japan if the nation is not a player
+- Heavy fighter production cost reduced by 20% across the board
 
 # 0.2
 
